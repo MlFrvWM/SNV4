@@ -959,29 +959,6 @@ Player:AddSwitch("Walk on Water", function(bool)
     end
 end)
 
-Player:AddSwitch("Auto Eat Eggs", function(bool)
-    _G.AutoEgg = bool
-        if bool then
-            task.spawn(function()
-                while _G.AutoEgg do
-                    local proteinEgg = player.Backpack:FindFirstChild("Protein Egg")
-                    if proteinEgg then
-                        proteinEgg.Parent = player.Character
-                        local vim = game:GetService("VirtualInputManager")
-                        for i = 1, 5 do
-                            vim:SendMouseButtonEvent(0, 0, 0, true, game, 1)
-                            task.wait()
-                            vim:SendMouseButtonEvent(0, 0, 0, false, game, 1)
-                            task.wait(0.1)
-                        end
-                    end
-                    task.wait(1)
-                end
-            end)
-        end
-    end
-})
-
 local Killer = window:AddTab("Killer")
 
 Killer:AddSwitch("Auto Good Karma", function(bool)
