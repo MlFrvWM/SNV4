@@ -294,7 +294,7 @@ local Rebirth = Main:AddFolder("Auto Rebirths")
 
 local autoRebirth = false
 
-Rebirth:AddTextBox("Rebirth Target", function(text)
+local targetSwitch = Rebirth:AddTextBox("Rebirth Target", function(text)
     local newValue = tonumber(text)
     if newValue and newValue > 0 then
         targetRebirthValue = newValue
@@ -316,7 +316,7 @@ end)
 
 local infiniteSwitch 
 
-local targetSwitch = Rebirth:AddSwitch("Auto Rebirth Target", function(bool)
+local switch = Rebirth:AddSwitch("Auto Rebirth Target", function(bool)
     _G.targetRebirthActive = bool
     
     if bool then
