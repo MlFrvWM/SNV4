@@ -292,8 +292,6 @@ end, "Acelera todas las herramientas")
 
 local Rebirth = Main:AddFolder("Auto Rebirths")
 
-local autoRebirth = false
-
 local targetSwitch = Rebirth:AddTextBox("Rebirth Target", function(text)
     local newValue = tonumber(text)
     if newValue and newValue > 0 then
